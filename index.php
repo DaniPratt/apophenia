@@ -8,6 +8,7 @@
 <head>
     <title>Apophenia task v2</title>
 
+    <script src="db/validate.js"></script>
     <script src="https://unpkg.com/jspsych@7.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.0.0"></script>
@@ -16,12 +17,11 @@
     <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
     <link href="https://unpkg.com/jspsych@7.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <script src="fn.js"></script>
 <script src="conf.js"></script>
 <script>
-    const workerId = 123
-
 
     const jsPsych = initJsPsych({
         defult_iti: 0
@@ -112,7 +112,36 @@
 
 <footer>
 
+<script src="exp/fn.js"></script>
+    <script src="exp/var.js"></script>
+    <script type="text/javascript">
+      // declare NDA required variables
+      let GUID;
+      let subjectID;
+      let sexAtBirth;
+      let siteNumber;
+      let ageAtAssessment;
+      let groupStatus;
+      let feedbackLink;
 
+      if (db_connection === false) {
+        GUID = "";
+        subjectID = "";
+        sexAtBirth = "";
+        siteNumber = "";
+        ageAtAssessment = "";
+        groupStatus = "";
+        feedbackLink = "";
+      } else if (db_connection === true) {
+        GUID = "<?php echo $subjectKey?>";
+        subjectID = "<?php echo $consortId?>";
+        sexAtBirth = "<?php echo $sexAtBirth?>";
+        siteNumber = "<?php echo $institutionAlias?>";
+        ageAtAssessment = "<?php echo $ageInMonths?>";
+        groupStatus = "<?php echo $groupStatus?>";
+        feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/dd.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+      }
+    </script>
 </footer>
 
 
