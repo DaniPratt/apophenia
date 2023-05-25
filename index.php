@@ -27,14 +27,14 @@
 
     timeline = [];
 
-    var introduction = {
+    let introduction = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: "You will see a series of images. Press the space bar when you think you see something. Press the space bar to begin.",
         choices: "ALL_KEYS"
     }
     timeline.push(introduction)
 
-    var test_stimuli = [
+    let test_stimuli = [
         { stimulus: 'stim/steve/Steve_step_1_round_1.jpg' },
         { stimulus: 'stim/steve/Steve_step_1_round_2.jpg' },
         { stimulus: 'stim/steve/Steve_step_1_round_3.jpg' },
@@ -387,19 +387,19 @@
         // { stimulus: 'stim/steve/Steve_step_50_round_7.jpg' }
     ];
 
-    var init_response = 1;
+    let init_response = 1;
 
-    var preload = {
+    let preload = {
         type: jsPsychPreload,
         auto_preload: true
     }
 
-    var trials = {
+    let trials = {
         type: jsPsychImageKeyboardResponse,
         choices: " ",
         // prompt: "<p>Press the space bar if you see an object",
         trial_duration: 500,
-        stimulus: jsPsych.timelineVariable('stimulus'),
+        stimulus: jsPsych.timelineletiable('stimulus'),
         post_trial_gap: 0,
         // render_on_canvas: true,
         on_finish: function (data) {
@@ -411,21 +411,21 @@
         }
     };
 
-    var response_trial = {
+    let response_trial = {
         type: jsPsychSurveyText,
         questions: [
             { prompt: 'What did you see?' }
         ]
     }
 
-    var certainty_trial = {
+    let certainty_trial = {
         type: jsPsychHtmlSliderResponse,
         stimulus: "<p>How certain are you?",
         require_movement: true,
         labels: ['0%', '50%', '100%']
     }
 
-    var response_initiated = {
+    let response_initiated = {
         timeline: [response_trial, certainty_trial],
         conditional_function: function () {
             if (init_response == 1) { return true; }
@@ -433,9 +433,9 @@
         }
     }
 
-    var test_procedure = {
+    let test_procedure = {
         timeline: [trials, response_initiated],
-        timeline_variables: test_stimuli,
+        timeline_letiables: test_stimuli,
     };
     timeline.push(test_procedure)
 
