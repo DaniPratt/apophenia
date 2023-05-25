@@ -1,24 +1,30 @@
 const version = "steve";
 //const version = "inkblot";
 
+let test_stimuli = [];
+
 switch (version) {
-    case "steve":
-        let inkblot_stimuli = [];
+    case "inkblot":
         for (let i = 1; i < 51; i++) {
             for (let j = 1; j < 8; j++) {
-                inkblot_stimuli.push({
-                    stimulus: "Inkblot_2_step_" + i + "_round_" + j + ".jpg",
+                test_stimuli.push({
+                    stimulus:
+                        "stim/inkblot/Inkblot_2_step_" +
+                        i +
+                        "_round_" +
+                        j +
+                        ".jpg",
                 });
             }
         }
         break;
 
-    case "inkblot":
-        let steve_stimuli = [];
+    case "steve":
         for (let i = 1; i < 51; i++) {
             for (let j = 1; j < 8; j++) {
-                inkblot_stimuli.push({
-                    stimulus: "Steve_2_step_" + i + "_round_" + j + ".jpg",
+                test_stimuli.push({
+                    stimulus:
+                        "stim/steve/Steve_step_" + i + "_round_" + j + ".jpg",
                 });
             }
         }

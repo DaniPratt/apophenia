@@ -7,7 +7,7 @@
 
 <head>
     <title>Apophenia task v2</title>
-    <script src="conf.js"></script>
+
     <script src="https://unpkg.com/jspsych@7.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.0.0"></script>
@@ -15,12 +15,13 @@
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
-    <script src="fn.js"></script>
-
     <link href="https://unpkg.com/jspsych@7.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
 </head>
+<script src="fn.js"></script>
+<script src="conf.js"></script>
 <script>
     const workerId = 123
+
 
     const jsPsych = initJsPsych({
         defult_iti: 0
@@ -50,7 +51,7 @@
         choices: " ",
         // prompt: "<p>Press the space bar if you see an object",
         trial_duration: 500,
-        stimulus: jsPsych.timelineletiable('stimulus'),
+        stimulus: jsPsych.timelineVariable('stimulus'),
         post_trial_gap: 0,
         // render_on_canvas: true,
         on_finish: function (data) {
@@ -86,7 +87,7 @@
 
     let test_procedure = {
         timeline: [trials, response_initiated],
-        timeline_letiables: test_stimuli,
+        timeline_variables: test_stimuli,
     };
     timeline.push(test_procedure)
 
@@ -108,5 +109,13 @@
 
 
 </script>
+
+<footer>
+
+
+</footer>
+
+
+
 
 </html>
