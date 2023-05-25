@@ -7,6 +7,7 @@
 
 <head>
     <title>Apophenia task v2</title>
+    <script src="conf.js"></script>
     <script src="https://unpkg.com/jspsych@7.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.0.0"></script>
@@ -15,6 +16,7 @@
     <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
     <script src="fn.js"></script>
+
     <link href="https://unpkg.com/jspsych@7.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
 </head>
 <script>
@@ -34,21 +36,7 @@
     }
     timeline.push(introduction)
 
-    let inkblot_stimuli =  []
-    for (let i = 1; i < 51; i++) {
-        for (let j = 1; j < 8; j++) {
-            inkblot_stimuli.push({ stimulus: 'Inkblot_2_step_' + i + '_round_' + j +'.jpg' })
-        }
 
-    }
-
-    let steve_stimuli =  []
-    for (let i = 1; i < 51; i++) {
-        for (let j = 1; j < 8; j++) {
-            inkblot_stimuli.push({ stimulus: 'Steve_2_step_' + i + '_round_' + j +'.jpg' })
-        }
-
-    }
 
     let init_response = 1;
 
