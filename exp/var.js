@@ -1,6 +1,3 @@
-const testStim = 50;
-const practiceStim = 1;
-
 const stimuli = [];
 
 switch (version) {

@@ -5,9 +5,13 @@ const version = "steve";
 // toggle practice //
 const practice = false;
 
-// default to test //
-let trials = testStim;
+// trial count //
+const testTrials = 50; // default: 50
+const practiceTrials = 1; // default: 1
+
+// default to experiment //
+let trials = testTrials;
 
 if (practice == true) {
-    trials = practiceStim;
+    trials = practiceTrials;
 }
