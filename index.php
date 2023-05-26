@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title>Apophenia task v2</title>
+    <title>Apophenia</title>
 
     <script src="db/validate.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
@@ -17,11 +17,16 @@
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
+
     <link href="https://unpkg.com/jspsych@7.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+
 </head>
-<script src="exp/fn.js"></script>
+
 <script src="exp/conf.js"></script>
+<script src="exp/var.js"></script>
+<script src="exp/fn.js"></script>
+
 <?php
       if ($db_connection_status == true) {
         include_once "include/nda.php";

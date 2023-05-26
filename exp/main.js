@@ -1,6 +1,6 @@
 let test_procedure = {
     timeline: [trial, response_initiated],
-    timeline_variables: test_stimuli,
+    timeline_variables: stimuli,
 };
 
 timeline.push(introduction);

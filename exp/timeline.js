@@ -110,7 +110,7 @@ let save_data = {
 
     choices: jsPsych.NO_KEYS,
     trial_duration: 5000,
-    on_finish: function () {
+    on_finish: () => {
         "use strict";
         saveData("apophenia_" + workerId, jsPsych.data.get().csv());
     },
