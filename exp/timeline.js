@@ -8,16 +8,16 @@ let introduction = {
         "You will see a series of images. Press the space bar when you think you see something. Press the space bar to begin.",
     choices: "ALL_KEYS",
 };
-timeline.push(introduction);
 
-let init_response = 1;
+let init_response;
 
 let preload = {
     type: jsPsychPreload,
     auto_preload: true,
+    // images: ["stim/inkblot/Inkblot_2_step_1_round_1.jpg"],
 };
 
-let trials = {
+let trial = {
     type: jsPsychImageKeyboardResponse,
     choices: " ",
     // prompt: "<p>Press the space bar if you see an object",
@@ -91,12 +91,6 @@ let response_initiated = {
     },
 };
 
-let test_procedure = {
-    timeline: [trials, response_initiated],
-    timeline_variables: test_stimuli,
-};
-timeline.push(test_procedure);
-
 let save_data = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus:
@@ -121,6 +115,6 @@ let save_data = {
         saveData("apophenia_" + workerId, jsPsych.data.get().csv());
     },
 };
-timeline.push(save_data);
 
-jsPsych.run(timeline);
+// call main
+$.getScript("exp/main.js");
