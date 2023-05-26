@@ -1,5 +1,7 @@
 timeline = [];
 
+let indexIterator = 1;
+
 let introduction = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus:
@@ -23,7 +25,18 @@ let trials = {
     stimulus: jsPsych.timelineVariable("stimulus"),
     post_trial_gap: 0,
     // render_on_canvas: true,
-    on_finish: function (data) {
+    on_finish: (data) => {
+        "use strict";
+        data.subjectkey = GUID;
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
+        data.handedness = handedness;
+        data.index = indexIterator;
+        indexIterator++;
         if (jsPsych.pluginAPI.compareKeys(data.response, " ")) {
             init_response = 1;
         } else {
@@ -35,6 +48,18 @@ let trials = {
 let response_trial = {
     type: jsPsychSurveyText,
     questions: [{ prompt: "What did you see?" }],
+    on_finish: (data) => {
+        "use strict";
+        data.subjectkey = GUID;
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
+        data.handedness = handedness;
+        data.index = indexIterator;
+    },
 };
 
 let certainty_trial = {
@@ -46,11 +71,23 @@ let certainty_trial = {
 
 let response_initiated = {
     timeline: [response_trial, certainty_trial],
-    conditional_function: function () {
+    conditional_function: () => {
         if (init_response == 1) {
             return true;
         }
         return false;
+    },
+    on_finish: (data) => {
+        "use strict";
+        data.subjectkey = GUID;
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
+        data.handedness = handedness;
+        data.index = indexIterator;
     },
 };
 
@@ -64,6 +101,17 @@ let save_data = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus:
         "<p>Data saving...</p>" +
+        '<div class="sk-cube-grid">' +
+        '<div class="sk-cube sk-cube1"></div>' +
+        '<div class="sk-cube sk-cube2"></div>' +
+        '<div class="sk-cube sk-cube3"></div>' +
+        '<div class="sk-cube sk-cube4"></div>' +
+        '<div class="sk-cube sk-cube5"></div>' +
+        '<div class="sk-cube sk-cube6"></div>' +
+        '<div class="sk-cube sk-cube7"></div>' +
+        '<div class="sk-cube sk-cube8"></div>' +
+        '<div class="sk-cube sk-cube9"></div>' +
+        "</div>" +
         "<p>Do not close this window until the text dissapears.</p>",
 
     choices: jsPsych.NO_KEYS,

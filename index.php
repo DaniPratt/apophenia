@@ -46,8 +46,6 @@
 
 <footer>
 
-<script src="exp/fn.js"></script>
-    <script src="exp/var.js"></script>
     <script type="text/javascript">
       // declare NDA required variables
       let GUID;
@@ -58,23 +56,23 @@
       let groupStatus;
       let feedbackLink;
 
-      if (db_connection === false) {
-        GUID = "";
-        subjectID = "";
-        sexAtBirth = "";
-        siteNumber = "";
-        ageAtAssessment = "";
-        groupStatus = "";
-        feedbackLink = "";
-      } else if (db_connection === true) {
-        GUID = "<?php echo $subjectKey?>";
-        subjectID = "<?php echo $consortId?>";
-        sexAtBirth = "<?php echo $sexAtBirth?>";
-        siteNumber = "<?php echo $institutionAlias?>";
-        ageAtAssessment = "<?php echo $ageInMonths?>";
-        groupStatus = "<?php echo $groupStatus?>";
-        feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/dd.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
-      }
+    //   if (db_connection === false) {
+    //     GUID = "";
+    //     subjectID = "";
+    //     sexAtBirth = "";
+    //     siteNumber = "";
+    //     ageAtAssessment = "";
+    //     groupStatus = "";
+    //     feedbackLink = "";
+    //   } else if (db_connection === true) {
+    //     GUID = "<?php echo $subjectKey?>";
+    //     subjectID = "<?php echo $consortId?>";
+    //     sexAtBirth = "<?php echo $sexAtBirth?>";
+    //     siteNumber = "<?php echo $institutionAlias?>";
+    //     ageAtAssessment = "<?php echo $ageInMonths?>";
+    //     groupStatus = "<?php echo $groupStatus?>";
+    //     feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/dd.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+    //   }
     </script>
 </footer>
 

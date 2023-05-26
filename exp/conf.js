@@ -20,7 +20,7 @@ switch (version) {
         break;
 
     case "steve":
-        for (let i = 1; i < 51; i++) {
+        for (let i = 1; i < 2; i++) {
             for (let j = 1; j < 8; j++) {
                 test_stimuli.push({
                     stimulus:
